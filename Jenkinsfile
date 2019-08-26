@@ -11,9 +11,9 @@ node{
    
    stage("Tag & Push image"){
       withDockerRegistry([credentialsId: 'dockerID',url: ""]) {
-          sh 'docker tag manee2k6/itrainbatman manee2k6/itrainbatman:dev'
-          sh 'docker push manee2k6/itrainbatman:dev'
-          sh 'docker push manee2k6/itrainbatman:latest'
+          sh 'docker tag test1/itrainbatman test1/itrainbatman:dev'
+          sh 'docker push test1/itrainbatman:dev'
+          sh 'docker push test1/itrainbatman:latest'
       }
     }
     stage("App deployment started"){
