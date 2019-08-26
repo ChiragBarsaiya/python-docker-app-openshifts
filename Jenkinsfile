@@ -6,7 +6,7 @@ node{
       }
    
    stage('Docker Build') {
-     def app = docker.build "manee2k6/itrainbatman"
+     def app = docker.build "test1/itrainbatman"
     }
    
    stage("Tag & Push image"){
@@ -17,8 +17,8 @@ node{
       }
     }
     stage("App deployment started"){
-     sh 'oc login --token=t01XSPheqChA1n1QxmPCSJAwm5rFNYzb7FvRP9mmg6A --server=https://api.us-east-1.online-starter.openshift.com:6443'
-     sh 'oc new-app shiddu/pythonimage:dev --name python'
+     sh 'oc login https://api.pro-us-east-1.openshift.com --token=sarMrT0n13hfgP8J92EfFTXlDzpy09Ad4Nw8BCuiH7A --server=https://api.us-east-1.online-starter.openshift.com:6443'
+     sh 'oc new-app test/pythonimage:dev --name python'
      sh 'oc expose svc python --name=python'
      sh 'oc status'
     }
