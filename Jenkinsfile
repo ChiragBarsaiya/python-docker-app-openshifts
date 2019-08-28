@@ -10,7 +10,7 @@ node{
     }
    
    stage("Tag & Push image"){
-      withDockerRegistry(credentialsId: 'docker', url: 'https://hub.docker.com') {
+      withDockerRegistry([credentialsId: 'docker',url: ""]) {
           sh 'docker tag test1/itrainbatman test1/itrainbatman:dev'
           sh 'docker push test1/itrainbatman:dev'
        
